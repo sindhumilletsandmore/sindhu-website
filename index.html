@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sindhu Millets &amp; More™ — Pure Ingredients. Wholesome Nutrition.</title>
+<meta name="description" content="Sindhu Millets & More — sprouted &amp; roasted millet java powders, instant mixes and natural specials. No preservatives, no added sugar. Wholesome nutrition for the whole family." />
+<meta name="theme-color" content="#45531b" />
+<meta property="og:title" content="Sindhu Millets & More™" />
+<meta property="og:description" content="Pure Ingredients. Wholesome Nutrition. Sprouted &amp; roasted millet foods for the whole family." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="brand/sindhu-emblem.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Baloo+Tammudu+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --leaf:#5c6e26; --leaf-deep:#45531b; --sprout:#7d9c3f; --sprout-soft:#b3c184;
+    --gold:#d6a93a; --gold-deep:#bd8a27; --amber:#a86a1e;
+    --brown:#5a3417; --brown-deep:#41250f;
+    --cream:#efe5cc; --cream-lt:#f7f0dd; --cream-dk:#e3d6b6; --paper:#fffdf5;
+    --ink:#3a3d22; --ink-2:#5e5c3e;
+    --wa:#1faa54; --wa-deep:#128c43;
+    --shadow:0 24px 60px -30px rgba(69,83,27,.55); --shadow-sm:0 10px 30px -18px rgba(69,83,27,.5);
+    --serif:'Bitter','Baloo Tammudu 2',Georgia,serif;
+    --sans:'Nunito','Baloo Tammudu 2',system-ui,sans-serif;
+    --wrap:1200px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ animation:none!important; transition:none!important; } }
+  body{ margin:0; font-family:var(--sans); color:var(--ink); background:var(--cream-lt);
+    background-image:radial-gradient(rgba(122,74,36,.05) .5px, transparent .7px); background-size:3mm 3mm; line-height:1.55; overflow-x:hidden; }
+  a{ color:var(--leaf-deep); text-decoration:none; }
+  a:hover{ color:var(--gold-deep); }
+  img{ max-width:100%; display:block; }
+  h1,h2,h3{ font-family:var(--serif); color:var(--brown-deep); margin:0; line-height:1.05; font-weight:800; letter-spacing:-.01em; }
+  section{ scroll-margin-top:86px; }
+  .wrap{ width:min(var(--wrap),92vw); margin-inline:auto; }
+  .eyebrow{ font-family:var(--sans); font-weight:800; text-transform:uppercase; letter-spacing:.22em; font-size:.72rem; color:var(--amber); display:inline-flex; align-items:center; gap:.6em; }
+  .eyebrow::before{ content:""; width:26px; height:2px; background:linear-gradient(90deg,var(--gold),transparent); border-radius:2px; }
+  .lede{ font-family:var(--serif); font-style:italic; color:var(--brown); font-weight:500; }
+  .btn{ --bg:var(--leaf-deep); --fg:var(--paper); display:inline-flex; align-items:center; gap:.6em; font-family:var(--sans); font-weight:800; font-size:.98rem; padding:.85em 1.5em; border-radius:999px; border:1.5px solid transparent; background:var(--bg); color:var(--fg); cursor:pointer; transition:transform .25s, box-shadow .25s, background .25s; box-shadow:var(--shadow-sm); text-align:center; }
+  .btn:hover{ transform:translateY(-2px); color:var(--fg); box-shadow:0 16px 34px -18px rgba(69,83,27,.7); }
+  .btn svg{ width:1.15em; height:1.15em; }
+  .btn.wa{ --bg:var(--wa); } .btn.wa:hover{ background:var(--wa-deep); }
+  .btn.gold{ --bg:linear-gradient(135deg,var(--gold),var(--gold-deep)); --fg:#3a2405; }
+  .btn.ghost{ --bg:transparent; --fg:var(--leaf-deep); border-color:rgba(69,83,27,.35); box-shadow:none; }
+  .btn.ghost:hover{ background:rgba(92,110,38,.08); }
+  .divider{ display:flex; align-items:center; gap:10px; }
+  .divider i{ height:1px; flex:1; background:linear-gradient(90deg,transparent,rgba(189,138,39,.5),transparent); }
+  .divider b{ width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 4px rgba(214,169,58,.18); }
+
+  /* header */
+  header.nav{ position:sticky; top:0; z-index:60; transition:.3s; }
+  .navbar{ display:flex; align-items:center; gap:18px; padding:16px 0; transition:.3s; }
+  header.nav.scrolled{ background:rgba(247,240,221,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:0 6px 24px -18px rgba(69,83,27,.6); border-bottom:1px solid rgba(189,138,39,.25); }
+  header.nav.scrolled .navbar{ padding:9px 0; }
+  .brand{ display:flex; align-items:center; gap:11px; margin-right:auto; }
+  .brand img{ width:44px; height:44px; object-fit:contain; transition:.3s; }
+  header.nav.scrolled .brand img{ width:38px; height:38px; }
+  .brand .bt{ font-family:var(--serif); font-weight:800; font-size:1.28rem; color:var(--leaf-deep); line-height:.95; }
+  .brand .bt small{ display:block; font-family:var(--sans); font-weight:800; letter-spacing:.16em; font-size:.54rem; color:var(--amber); text-transform:uppercase; }
+  .nav-links{ display:flex; gap:6px; align-items:center; }
+  .nav-links a{ font-weight:700; font-size:.95rem; color:var(--ink); padding:.5em .8em; border-radius:999px; transition:.2s; }
+  .nav-links a:hover{ background:rgba(92,110,38,.1); color:var(--leaf-deep); }
+  .lang{ display:inline-flex; padding:3px; background:rgba(69,83,27,.1); border-radius:999px; border:1px solid rgba(189,138,39,.3); }
+  .lang button{ border:none; background:transparent; font-family:var(--sans); font-weight:800; font-size:.82rem; padding:.42em .8em; border-radius:999px; cursor:pointer; color:var(--ink-2); transition:.2s; }
+  .lang button.on{ background:var(--leaf-deep); color:var(--paper); box-shadow:var(--shadow-sm); }
+  .burger{ display:none; border:none; background:rgba(69,83,27,.1); width:44px; height:44px; border-radius:12px; cursor:pointer; align-items:center; justify-content:center; }
+  .burger span,.burger span::before,.burger span::after{ content:""; display:block; width:20px; height:2px; background:var(--leaf-deep); border-radius:2px; position:relative; transition:.3s; }
+  .burger span::before{ position:absolute; top:-6px; } .burger span::after{ position:absolute; top:6px; }
+  body.menu-open .burger span{ background:transparent; }
+  body.menu-open .burger span::before{ transform:rotate(45deg); top:0; }
+  body.menu-open .burger span::after{ transform:rotate(-45deg); top:0; }
+
+  /* hero */
+  .hero{ position:relative; padding:clamp(28px,6vw,70px) 0 clamp(40px,7vw,86px); overflow:hidden; }
+  .hero::before{ content:""; position:absolute; inset:0; background:radial-gradient(120% 90% at 82% 8%, rgba(214,169,58,.22), transparent 46%), radial-gradient(90% 80% at 8% 92%, rgba(125,156,63,.2), transparent 52%); pointer-events:none; }
+  .hero-grid{ position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px,4vw,56px); align-items:center; }
+  .hero h1{ font-size:clamp(2.3rem,5.4vw,4.1rem); margin:.32em 0 .18em; }
+  .hero h1 .hl{ position:relative; color:var(--leaf-deep); white-space:nowrap; }
+  .hero h1 .hl::after{ content:""; position:absolute; left:0; right:0; bottom:.06em; height:.28em; background:linear-gradient(90deg,rgba(214,169,58,.6),rgba(214,169,58,.15)); border-radius:6px; z-index:-1; transform:scaleX(0); transform-origin:left; animation:uline 1s .5s forwards cubic-bezier(.2,.7,.2,1); }
+  @keyframes uline{ to{ transform:scaleX(1); } }
+  .hero p.sub{ font-size:clamp(1.02rem,1.7vw,1.22rem); color:var(--ink-2); max-width:34ch; margin:.2em 0 1.5em; }
+  .hero .cta{ display:flex; gap:12px; flex-wrap:wrap; }
+  .hero .chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:22px; }
+  .chip{ display:inline-flex; align-items:center; gap:.5em; background:var(--paper); border:1px solid rgba(189,138,39,.3); color:var(--brown); font-weight:800; font-size:.78rem; padding:.5em .9em; border-radius:999px; box-shadow:var(--shadow-sm); }
+  .chip svg{ width:15px; height:15px; color:var(--leaf); }
+  .hero-art{ position:relative; }
+  .hero-photo{ position:relative; border-radius:26px; overflow:hidden; box-shadow:var(--shadow); border:6px solid var(--paper); aspect-ratio:4/3.4; background:linear-gradient(160deg,var(--cream-lt),var(--cream-dk)); }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .hero-pack{ position:absolute; width:34%; right:-4%; bottom:-6%; filter:drop-shadow(0 26px 30px rgba(65,37,15,.4)); animation:float 6s ease-in-out infinite; }
+  @keyframes float{ 0%,100%{ transform:translateY(0) rotate(-3deg); } 50%{ transform:translateY(-14px) rotate(-3deg); } }
+  .hero-badge{ position:absolute; left:-14px; top:24px; background:var(--paper); border-radius:16px; padding:11px 15px; box-shadow:var(--shadow); display:flex; align-items:center; gap:10px; border:1px solid rgba(189,138,39,.25); }
+  .hero-badge .n{ font-family:var(--serif); font-weight:900; font-size:1.5rem; color:var(--leaf-deep); line-height:1; }
+  .hero-badge .l{ font-size:.68rem; font-weight:800; color:var(--ink-2); text-transform:uppercase; letter-spacing:.08em; }
+
+  /* marquee */
+  .marquee{ background:linear-gradient(180deg,var(--leaf),var(--leaf-deep)); color:var(--cream-lt); padding:13px 0; overflow:hidden; margin-top:6px; }
+  .marquee .track{ display:flex; gap:56px; white-space:nowrap; width:max-content; animation:scroll 26s linear infinite; }
+  .marquee:hover .track{ animation-play-state:paused; }
+  @keyframes scroll{ to{ transform:translateX(-50%); } }
+  .marquee .it{ display:inline-flex; align-items:center; gap:12px; font-family:var(--serif); font-weight:700; font-size:1.02rem; letter-spacing:.02em; }
+  .marquee .it svg{ width:18px; height:18px; color:var(--gold); }
+
+  /* generic section head */
+  .sec{ padding:clamp(48px,8vw,96px) 0; }
+  .sec-head{ text-align:center; max-width:64ch; margin:0 auto clamp(30px,4vw,52px); }
+  .sec-head h2{ font-size:clamp(1.9rem,4vw,3rem); margin:.28em 0 .35em; }
+  .sec-head p{ color:var(--ink-2); font-size:1.06rem; }
+
+  /* story */
+  .story-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,64px); align-items:center; }
+  .story-copy p{ color:var(--ink-2); font-size:1.06rem; }
+  .story-copy h2{ font-size:clamp(1.8rem,3.7vw,2.7rem); margin:.3em 0 .5em; }
+  .story-photo{ position:relative; border-radius:24px; overflow:hidden; box-shadow:var(--shadow); border:6px solid var(--paper); aspect-ratio:5/5.4; }
+  .story-photo img{ width:100%; height:100%; object-fit:cover; }
+  .story-quote{ position:absolute; left:16px; right:16px; bottom:16px; background:rgba(65,37,15,.62); backdrop-filter:blur(6px); color:var(--cream-lt); padding:14px 18px; border-radius:16px; font-family:var(--serif); font-style:italic; font-size:1rem; }
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:34px; }
+  .stat{ background:var(--paper); border:1px solid rgba(189,138,39,.24); border-radius:18px; padding:18px 12px; text-align:center; box-shadow:var(--shadow-sm); }
+  .stat .n{ font-family:var(--serif); font-weight:900; font-size:clamp(1.7rem,3.4vw,2.4rem); color:var(--leaf-deep); line-height:1; }
+  .stat .l{ font-size:.78rem; font-weight:800; color:var(--ink-2); text-transform:uppercase; letter-spacing:.06em; margin-top:6px; }
+
+  /* products */
+  .filters{ display:flex; gap:9px; flex-wrap:wrap; justify-content:center; margin-bottom:34px; }
+  .filters button{ font-family:var(--sans); font-weight:800; font-size:.9rem; padding:.6em 1.15em; border-radius:999px; border:1.5px solid rgba(69,83,27,.28); background:var(--paper); color:var(--ink-2); cursor:pointer; transition:.22s; }
+  .filters button:hover{ border-color:var(--gold); color:var(--brown); }
+  .filters button.on{ background:var(--leaf-deep); color:var(--paper); border-color:var(--leaf-deep); box-shadow:var(--shadow-sm); }
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .card{ position:relative; background:var(--paper); border:1px solid rgba(189,138,39,.22); border-radius:22px; overflow:hidden; box-shadow:var(--shadow-sm); transition:transform .3s, box-shadow .3s; display:flex; flex-direction:column; }
+  .card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+  .card .pic{ position:relative; aspect-ratio:1/1; background:radial-gradient(120% 90% at 50% 12%, rgba(214,169,58,.16), transparent 55%), linear-gradient(165deg,var(--cream-lt),var(--cream-dk)); display:flex; align-items:center; justify-content:center; padding:20px; cursor:pointer; }
+  .card .pic img{ height:100%; width:auto; object-fit:contain; filter:drop-shadow(0 18px 22px rgba(65,37,15,.28)); transition:transform .4s; }
+  .card:hover .pic img{ transform:scale(1.05) rotate(-1deg); }
+  .card .tagpill{ position:absolute; top:12px; left:12px; background:rgba(69,83,27,.92); color:var(--cream-lt); font-weight:800; font-size:.64rem; letter-spacing:.08em; text-transform:uppercase; padding:.4em .75em; border-radius:999px; }
+  .card .qv{ position:absolute; top:12px; right:12px; width:34px; height:34px; border-radius:50%; border:none; background:rgba(255,253,245,.92); color:var(--leaf-deep); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm); opacity:0; transform:translateY(-6px); transition:.25s; }
+  .card:hover .qv{ opacity:1; transform:none; }
+  .card .body{ padding:16px 17px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .card .body h3{ font-size:1.16rem; color:var(--brown); }
+  .card .body .te-name{ font-family:'Baloo Tammudu 2',sans-serif; font-weight:700; color:var(--leaf-deep); font-size:.92rem; margin-top:-3px; }
+  .card .body p{ margin:0; color:var(--ink-2); font-size:.9rem; flex:1; }
+  .card .foot{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:4px; }
+  .card .price{ font-family:var(--serif); font-weight:800; color:var(--brown-deep); font-size:1.05rem; }
+  .card .price small{ font-family:var(--sans); font-weight:700; color:var(--ink-2); font-size:.72rem; }
+  .card .price .enq{ font-family:var(--sans); font-weight:800; font-size:.82rem; color:var(--amber); }
+  .card .order{ border:none; background:var(--wa); color:#fff; font-family:var(--sans); font-weight:800; font-size:.82rem; padding:.6em 1em; border-radius:999px; cursor:pointer; display:inline-flex; align-items:center; gap:.45em; transition:.2s; white-space:nowrap; }
+  .card .order:hover{ background:var(--wa-deep); transform:translateY(-1px); }
+  .card .order svg{ width:15px; height:15px; }
+
+  /* benefits */
+  .benefits{ background:linear-gradient(180deg,rgba(125,156,63,.1),transparent); }
+  .bgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .bcard{ background:var(--paper); border:1px solid rgba(189,138,39,.2); border-radius:20px; padding:26px 22px; box-shadow:var(--shadow-sm); transition:.3s; }
+  .bcard:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+  .bicon{ width:52px; height:52px; border-radius:15px; background:linear-gradient(150deg,rgba(214,169,58,.22),rgba(125,156,63,.18)); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+  .bicon svg{ width:27px; height:27px; color:var(--leaf-deep); }
+  .bcard h3{ font-size:1.16rem; margin-bottom:6px; color:var(--brown); }
+  .bcard p{ margin:0; color:var(--ink-2); font-size:.92rem; }
+
+  /* prepare */
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .step{ position:relative; background:var(--paper); border:1px solid rgba(189,138,39,.2); border-radius:20px; padding:30px 24px 26px; box-shadow:var(--shadow-sm); }
+  .step .num{ position:absolute; top:-18px; left:24px; width:44px; height:44px; border-radius:14px; background:linear-gradient(150deg,var(--gold),var(--gold-deep)); color:#3a2405; font-family:var(--serif); font-weight:900; font-size:1.3rem; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm); }
+  .step h3{ font-size:1.18rem; margin:10px 0 6px; color:var(--brown); }
+  .step p{ margin:0; color:var(--ink-2); font-size:.95rem; }
+
+  /* testimonials */
+  .tmwrap{ position:relative; max-width:820px; margin-inline:auto; }
+  .tmtrack{ display:flex; overflow:hidden; border-radius:24px; }
+  .tm{ min-width:100%; background:var(--paper); border:1px solid rgba(189,138,39,.22); box-shadow:var(--shadow-sm); padding:clamp(28px,4vw,44px); text-align:center; transition:transform .5s cubic-bezier(.4,0,.2,1); }
+  .tm .stars{ color:var(--gold); letter-spacing:3px; font-size:1.1rem; }
+  .tm blockquote{ font-family:var(--serif); font-style:italic; font-size:clamp(1.1rem,2.1vw,1.42rem); color:var(--brown-deep); margin:14px 0 18px; line-height:1.4; }
+  .tm .who{ font-weight:800; color:var(--leaf-deep); }
+  .tmdots{ display:flex; gap:9px; justify-content:center; margin-top:20px; }
+  .tmdots button{ width:10px; height:10px; border-radius:50%; border:none; background:rgba(69,83,27,.25); cursor:pointer; transition:.2s; padding:0; }
+  .tmdots button.on{ background:var(--gold-deep); width:26px; border-radius:999px; }
+
+  /* contact */
+  .contact{ background:linear-gradient(180deg,transparent,rgba(214,169,58,.1)); }
+  .cgrid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(26px,4vw,52px); align-items:start; }
+  .clist{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .cc{ display:flex; gap:13px; align-items:flex-start; background:var(--paper); border:1px solid rgba(189,138,39,.2); border-radius:18px; padding:16px 17px; box-shadow:var(--shadow-sm); transition:.25s; }
+  .cc:hover{ transform:translateY(-3px); box-shadow:var(--shadow); color:inherit; }
+  .cc .ic{ width:42px; height:42px; flex:none; border-radius:12px; background:linear-gradient(150deg,rgba(125,156,63,.2),rgba(214,169,58,.2)); display:flex; align-items:center; justify-content:center; }
+  .cc .ic svg{ width:22px; height:22px; color:var(--leaf-deep); }
+  .cc .l{ font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--amber); }
+  .cc .v{ font-weight:800; color:var(--brown); font-size:.96rem; word-break:break-word; }
+  .cc.addr{ grid-column:1/-1; }
+  .form{ background:var(--paper); border:1px solid rgba(189,138,39,.24); border-radius:22px; padding:clamp(22px,3vw,32px); box-shadow:var(--shadow); }
+  .form h3{ font-size:1.4rem; margin-bottom:4px; color:var(--brown-deep); }
+  .form p.fs{ color:var(--ink-2); font-size:.92rem; margin:0 0 18px; }
+  .field{ margin-bottom:14px; }
+  .field label{ display:block; font-weight:800; font-size:.8rem; color:var(--ink-2); margin-bottom:5px; text-transform:uppercase; letter-spacing:.05em; }
+  .field input,.field select,.field textarea{ width:100%; font-family:var(--sans); font-size:.98rem; padding:.75em .9em; border-radius:12px; border:1.5px solid rgba(69,83,27,.24); background:var(--cream-lt); color:var(--ink); transition:.2s; }
+  .field input:focus,.field select:focus,.field textarea:focus{ outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(214,169,58,.2); }
+  .field textarea{ min-height:92px; resize:vertical; }
+
+  /* footer */
+  footer{ background:linear-gradient(180deg,var(--leaf-deep),#374618); color:var(--cream-lt); padding:clamp(44px,6vw,72px) 0 26px; margin-top:10px; }
+  footer a{ color:var(--cream-lt); opacity:.86; } footer a:hover{ color:#fff; opacity:1; }
+  .fgrid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1.2fr; gap:34px; }
+  .fbrand .flogo{ display:flex; align-items:center; gap:11px; margin-bottom:14px; }
+  .fbrand .flogo img{ width:52px; height:52px; background:var(--paper); border-radius:14px; padding:5px; }
+  .fbrand .flogo b{ font-family:var(--serif); font-size:1.3rem; }
+  .fbrand p{ opacity:.82; font-size:.94rem; max-width:34ch; }
+  .fsoc{ display:flex; gap:10px; margin-top:16px; }
+  .fsoc a{ width:40px; height:40px; border-radius:11px; background:rgba(255,253,245,.12); display:flex; align-items:center; justify-content:center; transition:.2s; }
+  .fsoc a:hover{ background:var(--gold); color:#3a2405; transform:translateY(-3px); }
+  .fsoc svg{ width:19px; height:19px; }
+  footer h4{ font-family:var(--serif); font-size:1.05rem; margin:0 0 14px; color:#fff; }
+  .fcol ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; font-size:.93rem; }
+  .fssai{ display:inline-flex; align-items:center; gap:8px; margin-top:14px; background:rgba(255,253,245,.1); padding:.5em .8em; border-radius:10px; font-size:.8rem; font-weight:700; }
+  .fbot{ border-top:1px solid rgba(255,253,245,.18); margin-top:34px; padding-top:20px; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:.84rem; opacity:.8; }
+
+  /* floating + toTop */
+  .fab{ position:fixed; right:20px; bottom:20px; z-index:55; width:58px; height:58px; border-radius:50%; background:var(--wa); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 30px -10px rgba(18,140,67,.7); border:none; cursor:pointer; transition:.25s; }
+  .fab:hover{ transform:scale(1.08); background:var(--wa-deep); }
+  .fab svg{ width:30px; height:30px; }
+  .fab::after{ content:""; position:absolute; inset:0; border-radius:50%; box-shadow:0 0 0 0 rgba(31,170,84,.5); animation:pulse 2.4s infinite; }
+  @keyframes pulse{ to{ box-shadow:0 0 0 16px rgba(31,170,84,0); } }
+  .toTop{ position:fixed; right:22px; bottom:88px; z-index:54; width:44px; height:44px; border-radius:12px; background:var(--paper); border:1px solid rgba(189,138,39,.3); color:var(--leaf-deep); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm); opacity:0; pointer-events:none; transform:translateY(10px); transition:.3s; }
+  .toTop.show{ opacity:1; pointer-events:auto; transform:none; }
+
+  /* modal */
+  .modal{ position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:20px; }
+  .modal.open{ display:flex; }
+  .modal .ov{ position:absolute; inset:0; background:rgba(41,30,10,.55); backdrop-filter:blur(4px); animation:fade .3s; }
+  @keyframes fade{ from{ opacity:0; } }
+  .modal .box{ position:relative; z-index:1; width:min(880px,96vw); max-height:92vh; overflow:auto; background:var(--paper); border-radius:24px; box-shadow:var(--shadow); display:grid; grid-template-columns:1fr 1.05fr; animation:pop .35s cubic-bezier(.2,.8,.2,1); }
+  @keyframes pop{ from{ opacity:0; transform:translateY(20px) scale(.97); } }
+  .modal .mpic{ background:radial-gradient(120% 90% at 50% 10%, rgba(214,169,58,.18), transparent 55%), linear-gradient(165deg,var(--cream-lt),var(--cream-dk)); display:flex; align-items:center; justify-content:center; padding:30px; }
+  .modal .mpic img{ height:min(52vh,440px); width:auto; filter:drop-shadow(0 26px 30px rgba(65,37,15,.34)); }
+  .modal .mbody{ padding:clamp(22px,3vw,34px); }
+  .modal .mbody .eyebrow{ margin-bottom:8px; }
+  .modal .mbody h3{ font-size:clamp(1.5rem,2.6vw,2rem); color:var(--brown-deep); }
+  .modal .mbody .te-name{ font-family:'Baloo Tammudu 2',sans-serif; font-weight:700; color:var(--leaf-deep); font-size:1.05rem; margin:2px 0 10px; }
+  .modal .mbody .mdesc{ color:var(--ink-2); font-size:1rem; margin-bottom:16px; }
+  .modal .mchips{ display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; }
+  .modal .mchips span{ background:rgba(125,156,63,.16); color:var(--leaf-deep); font-weight:800; font-size:.74rem; padding:.4em .8em; border-radius:999px; }
+  .msize{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+  .msize button{ font-family:var(--sans); font-weight:800; font-size:.9rem; padding:.6em 1em; border-radius:12px; border:1.5px solid rgba(69,83,27,.28); background:var(--cream-lt); color:var(--ink); cursor:pointer; transition:.2s; display:flex; flex-direction:column; align-items:center; gap:2px; }
+  .msize button small{ font-weight:700; color:var(--ink-2); font-size:.72rem; }
+  .msize button.on{ border-color:var(--leaf-deep); background:rgba(92,110,38,.12); color:var(--brown); }
+  .qty{ display:flex; align-items:center; gap:0; margin-bottom:18px; width:max-content; border:1.5px solid rgba(69,83,27,.24); border-radius:12px; overflow:hidden; }
+  .qty button{ width:42px; height:42px; border:none; background:var(--cream-lt); font-size:1.3rem; font-weight:800; color:var(--leaf-deep); cursor:pointer; }
+  .qty span{ width:52px; text-align:center; font-weight:800; font-size:1.05rem; }
+  .mclose{ position:absolute; top:12px; right:12px; z-index:2; width:40px; height:40px; border-radius:50%; border:none; background:rgba(255,253,245,.9); color:var(--brown); font-size:1.4rem; cursor:pointer; box-shadow:var(--shadow-sm); line-height:1; }
+  .mclose:hover{ background:#fff; }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s, transform .7s; }
+  .reveal.in{ opacity:1; transform:none; }
+  .reveal.d1{ transition-delay:.08s; } .reveal.d2{ transition-delay:.16s; } .reveal.d3{ transition-delay:.24s; }
+  .skip{ position:absolute; left:-999px; top:0; background:var(--leaf-deep); color:#fff; padding:10px 16px; border-radius:0 0 10px 0; z-index:100; }
+  .skip:focus{ left:0; color:#fff; }
+
+  @media (max-width:980px){
+    .nav-links{ position:fixed; inset:64px 0 auto 0; flex-direction:column; background:rgba(247,240,221,.98); backdrop-filter:blur(14px); padding:16px 6vw 24px; gap:4px; box-shadow:0 20px 40px -24px rgba(69,83,27,.6); transform:translateY(-140%); transition:.35s; border-bottom:1px solid rgba(189,138,39,.3); }
+    body.menu-open .nav-links{ transform:none; }
+    .nav-links a{ padding:.75em .4em; border-bottom:1px solid rgba(189,138,39,.15); border-radius:0; }
+    .burger{ display:flex; }
+    .hero-grid,.story-grid,.cgrid{ grid-template-columns:1fr; }
+    .hero-art{ order:-1; max-width:460px; margin-inline:auto; }
+    .grid,.bgrid,.steps{ grid-template-columns:repeat(2,1fr); }
+    .fgrid{ grid-template-columns:1fr 1fr; }
+    .modal .box{ grid-template-columns:1fr; } .modal .mpic{ padding:22px; } .modal .mpic img{ height:min(34vh,300px); }
+  }
+  @media (max-width:600px){
+    .stats,.clist{ grid-template-columns:1fr 1fr; }
+    .grid,.bgrid,.steps{ grid-template-columns:1fr; }
+    .fgrid{ grid-template-columns:1fr; }
+    .hero p.sub{ max-width:none; }
+    .hero .cta .btn{ flex:1; }
+  }
+</style>
+</head>
+<body>
+<a href="#products" class="skip" data-i18n="skip">Skip to products</a>
+
+<header class="nav" id="nav">
+  <div class="wrap navbar">
+    <a href="#top" class="brand" aria-label="Sindhu Millets & More home">
+      <img src="brand/sindhu-emblem.png" alt="Sindhu Millets & More emblem" />
+      <span class="bt">Sindhu<small>Millets &amp; More™</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#story" data-i18n="nav_story">Our Story</a>
+      <a href="#products" data-i18n="nav_products">Products</a>
+      <a href="#why" data-i18n="nav_why">Why Millets</a>
+      <a href="#prepare" data-i18n="nav_prepare">How to Use</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" class="on">EN</button>
+      <button data-lang="te">తె</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow" data-i18n="hero_ey">Sprouted &amp; Roasted · Family Nutrition</span>
+        <h1><span data-i18n="hero_h1a">Pure Ingredients.</span><br /><span class="hl" data-i18n="hero_h1b">Wholesome Nutrition.</span></h1>
+        <p class="sub" data-i18n="hero_sub">Traditional millets, sprouted and roasted the natural way — wholesome instant java powders and mixes for the whole family. No preservatives. No added sugar.</p>
+        <div class="cta">
+          <a class="btn wa" id="heroWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-6a11.4 11.4 0 111 .6l-5.9 1.5zm6.3-3.7l.4.2a9.5 9.5 0 004.8 1.3 9.5 9.5 0 10-8-4.4l.2.4-1 3.5z"/><path fill="#fff" d="M9.2 6.9c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9 2 3.1 4.9 4.3c2.4 1 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5s0-.4 0-.5l-.8-2.1z"/></svg><span data-i18n="hero_cta1">Order on WhatsApp</span></a>
+          <a class="btn ghost" href="#products"><span data-i18n="hero_cta2">Explore the Range</span></a>
+        </div>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="chip1">100% Natural</span></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V5z"/></svg><span data-i18n="chip2">No Preservatives</span></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4l16 16M8 6h9v9"/></svg><span data-i18n="chip3">No Added Sugar</span></span>
+        </div>
+      </div>
+      <div class="hero-art reveal">
+        <div class="hero-photo">
+          <img src="brand/sindhu-family-crop.png" alt="A family enjoying Sindhu millet java" />
+        </div>
+        <div class="hero-badge">
+          <span class="n">10+</span>
+          <span class="l" data-i18n="hero_badge">Millets<br />&amp; Grains</span>
+        </div>
+        <img class="hero-pack" src="brand/front-multimillet.png" alt="Multi Millet Java Powder pack" />
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track" id="mtrack"></div></div>
+
+  <!-- STORY -->
+  <section class="sec" id="story">
+    <div class="wrap story-grid">
+      <div class="story-copy reveal">
+        <span class="eyebrow" data-i18n="story_ey">Our Story</span>
+        <h2 data-i18n="story_h">Bringing millets back to the family table</h2>
+        <p data-i18n="story_p1">Sindhu Millets &amp; More began with a simple belief — the traditional grains our grandparents thrived on deserve a place in every modern home. We sprout and roast each grain the slow, natural way to unlock better taste and easy nutrition.</p>
+        <p data-i18n="story_p2">No preservatives, no added sugar — just honest, wholesome food. From everyday java powders to instant idli &amp; dosa mixes, every product is made for the whole family.</p>
+        <div class="stats" id="stats">
+          <div class="stat"><div class="n" data-count="10" data-suffix="+">0</div><div class="l" data-i18n="stat1">Millets &amp; Grains</div></div>
+          <div class="stat"><div class="n" data-count="9" data-suffix="+">0</div><div class="l" data-i18n="stat2">Wholesome Products</div></div>
+          <div class="stat"><div class="n" data-count="0">0</div><div class="l" data-i18n="stat3">Preservatives</div></div>
+          <div class="stat"><div class="n" data-count="100" data-suffix="%">0</div><div class="l" data-i18n="stat4">Natural</div></div>
+        </div>
+      </div>
+      <div class="story-photo reveal d1">
+        <img src="brand/sindhu-family2.png" alt="Sindhu family" onerror="this.src='brand/sindhu-family-crop.png'" />
+        <div class="story-quote" data-i18n="story_q">"Real food, made the way it used to be — for the people we love most."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="sec" id="products" style="padding-top:clamp(20px,3vw,40px)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="prod_ey">Our Products</span>
+        <h2 data-i18n="prod_h">Wholesome foods for every day</h2>
+        <p data-i18n="prod_p">Sprouted &amp; roasted powders, instant mixes and natural specials — tap any product to order on WhatsApp.</p>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="sec benefits" id="why">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="why_ey">Why Millets</span>
+        <h2 data-i18n="why_h">Tiny grains, mighty goodness</h2>
+        <p data-i18n="why_p">For generations, millets have quietly powered healthy families. Here's what makes them special.</p>
+      </div>
+      <div class="bgrid" id="bgrid"></div>
+    </div>
+  </section>
+
+  <!-- PREPARE -->
+  <section class="sec" id="prepare">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="prep_ey">How to Use</span>
+        <h2 data-i18n="prep_h">A warm, wholesome cup in minutes</h2>
+        <p data-i18n="prep_p">Our java powders are ready in three simple steps.</p>
+      </div>
+      <div class="steps" id="steps"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec" id="love" style="background:linear-gradient(180deg,rgba(125,156,63,.1),transparent)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="tm_ey">Family Love</span>
+        <h2 data-i18n="tm_h">Loved in homes like yours</h2>
+      </div>
+      <div class="tmwrap reveal">
+        <div class="tmtrack" id="tmtrack"></div>
+        <div class="tmdots" id="tmdots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="ct_ey">Get in Touch</span>
+        <h2 data-i18n="ct_h">Orders &amp; enquiries</h2>
+        <p data-i18n="ct_p">We take orders on WhatsApp. Reach us any way you like — we'd love to hear from you.</p>
+      </div>
+      <div class="cgrid">
+        <div class="clist reveal">
+          <a class="cc" id="ccWa" href="#" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-6a11.4 11.4 0 111 .6l-5.9 1.5zm6.3-3.7l.4.2a9.5 9.5 0 004.8 1.3 9.5 9.5 0 10-8-4.4l.2.4-1 3.5z"/></svg></span>
+            <span><span class="l" data-i18n="ct_wa">WhatsApp</span><br /><span class="v">+91 79956 29557</span></span>
+          </a>
+          <a class="cc" href="tel:+917995629557">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></span>
+            <span><span class="l" data-i18n="ct_call">Call</span><br /><span class="v">+91 79956 29557</span></span>
+          </a>
+          <a class="cc" href="https://instagram.com/sindhumilletsandmore" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"/></svg></span>
+            <span><span class="l">Instagram</span><br /><span class="v">@sindhumilletsandmore</span></span>
+          </a>
+          <a class="cc" href="https://facebook.com/sindhumilletsandmore" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l.5-3H13v-2c0-.6.4-1 1-1z"/></svg></span>
+            <span><span class="l">Facebook</span><br /><span class="v">facebook.com/sindhumilletsandmore</span></span>
+          </a>
+          <a class="cc" href="https://youtube.com/@SindhuMilletsandMore" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 002 8.2 31 31 0 001.6 12 31 31 0 002 15.8a3 3 0 002.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 002.1-2.1c.3-1.2.4-2.5.4-3.8s-.1-2.6-.4-3.8zM10 15V9l5.2 3z"/></svg></span>
+            <span><span class="l">YouTube</span><br /><span class="v">@SindhuMilletsandMore</span></span>
+          </a>
+          <a class="cc" href="mailto:sindhumilletsandmore@gmail.com">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 6 9-6"/></svg></span>
+            <span><span class="l" data-i18n="ct_email">Email</span><br /><span class="v">sindhumilletsandmore@gmail.com</span></span>
+          </a>
+          <a class="cc addr" href="https://www.google.com/maps/search/?api=1&amp;query=Sai%27s%20Paradise%20Koppole%20Road%20Koppole%20Ongole%20Andhra%20Pradesh%20523001" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span><span class="l" data-i18n="ct_addr">Address · Tap for directions</span><br /><span class="v">Sai's Paradise, Koppole Road, Koppole, Ongole, Andhra Pradesh 523001</span></span>
+          </a>
+        </div>
+        <form class="form reveal d1" id="enqForm">
+          <h3 data-i18n="form_h">Send an enquiry</h3>
+          <p class="fs" data-i18n="form_s">Fill this in and we'll open WhatsApp with your message ready to send.</p>
+          <div class="field"><label data-i18n="form_name">Your name</label><input type="text" id="fName" required /></div>
+          <div class="field"><label data-i18n="form_prod">Product</label><select id="fProd"></select></div>
+          <div class="field"><label data-i18n="form_msg">Message</label><textarea id="fMsg"></textarea></div>
+          <button type="submit" class="btn wa" style="width:100%"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-6a11.4 11.4 0 111 .6l-5.9 1.5zm6.3-3.7l.4.2a9.5 9.5 0 004.8 1.3 9.5 9.5 0 10-8-4.4l.2.4-1 3.5z"/></svg><span data-i18n="form_btn">Send on WhatsApp</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="flogo"><img src="brand/sindhu-emblem.png" alt="Sindhu" /><b>Sindhu Millets &amp; More™</b></div>
+        <p data-i18n="foot_p">Pure Ingredients. Wholesome Nutrition. Sprouted &amp; roasted millet foods, made for the whole family.</p>
+        <div class="fsoc">
+          <a href="https://wa.me/917995629557" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-6a11.4 11.4 0 111 .6l-5.9 1.5zm6.3-3.7l.4.2a9.5 9.5 0 004.8 1.3 9.5 9.5 0 10-8-4.4l.2.4-1 3.5z"/></svg></a>
+          <a href="https://instagram.com/sindhumilletsandmore" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"/></svg></a>
+          <a href="https://facebook.com/sindhumilletsandmore" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l.5-3H13v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://youtube.com/@SindhuMilletsandMore" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 002 8.2 31 31 0 001.6 12 31 31 0 002 15.8a3 3 0 002.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 002.1-2.1c.3-1.2.4-2.5.4-3.8s-.1-2.6-.4-3.8zM10 15V9l5.2 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol"><h4 data-i18n="foot_ql">Explore</h4><ul>
+        <li><a href="#story" data-i18n="nav_story">Our Story</a></li>
+        <li><a href="#products" data-i18n="nav_products">Products</a></li>
+        <li><a href="#why" data-i18n="nav_why">Why Millets</a></li>
+        <li><a href="#prepare" data-i18n="nav_prepare">How to Use</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul></div>
+      <div class="fcol"><h4 data-i18n="foot_prod">Products</h4><ul id="fprod"></ul></div>
+      <div class="fcol">
+        <h4 data-i18n="foot_ct">Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/917995629557" target="_blank" rel="noopener">WhatsApp +91 79956 29557</a></li>
+          <li><a href="mailto:sindhumilletsandmore@gmail.com">sindhumilletsandmore@gmail.com</a></li>
+          <li style="opacity:.82">Sai's Paradise, Koppole Road, Koppole, Ongole, AP 523001</li>
+        </ul>
+        <span class="fssai"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>FSSAI Reg. 20126171000391</span>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© <span id="yr"></span> Sindhu Millets &amp; More™. <span data-i18n="foot_rights">All rights reserved.</span></span>
+      <span class="lede" style="opacity:.9" data-i18n="foot_tag">Pure Ingredients. Wholesome Nutrition.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="toTop" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-6a11.4 11.4 0 111 .6l-5.9 1.5zm6.3-3.7l.4.2a9.5 9.5 0 004.8 1.3 9.5 9.5 0 10-8-4.4l.2.4-1 3.5z"/><path fill="#fff" d="M9.2 6.9c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9 2 3.1 4.9 4.3c2.4 1 2.9.8 3.4.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5s0-.4 0-.5l-.8-2.1z"/></svg></a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName">
+  <div class="ov" data-close></div>
+  <div class="box">
+    <button class="mclose" data-close aria-label="Close">×</button>
+    <div class="mpic"><img id="mImg" src="" alt="" /></div>
+    <div class="mbody">
+      <span class="eyebrow" id="mCat"></span>
+      <h3 id="mName"></h3>
+      <div class="te-name" id="mTe"></div>
+      <div class="mdesc" id="mDesc"></div>
+      <div class="mchips" id="mChips"></div>
+      <div class="msize" id="mSize"></div>
+      <label style="font-weight:800;font-size:.8rem;color:var(--ink-2);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:6px" data-i18n="m_qty">Quantity</label>
+      <div class="qty"><button id="qMinus" aria-label="Decrease">−</button><span id="qVal">1</span><button id="qPlus" aria-label="Increase">+</button></div>
+      <a class="btn wa" id="mOrder" href="#" target="_blank" rel="noopener" style="width:100%"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-6a11.4 11.4 0 111 .6l-5.9 1.5zm6.3-3.7l.4.2a9.5 9.5 0 004.8 1.3 9.5 9.5 0 10-8-4.4l.2.4-1 3.5z"/></svg><span data-i18n="m_order">Order on WhatsApp</span></a>
+    </div>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#45531b"/><g fill="#efe5cc"><path d="M50 24c-6 8-6 20 0 30 6-10 6-22 0-30z" fill="#d6a93a"/><text x="50" y="72" font-family="Georgia,serif" font-size="30" font-weight="900" text-anchor="middle" fill="#f7f0dd">S</text></g></svg>
+</template>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "917995629557";
+  var LS = "sindhu_lang";
+
+  var PRODUCTS = [
+    { id:"multimillet", cat:"java", img:"brand/front-multimillet.png",
+      en:{n:"Multi Millet Java Powder", tag:"Sprouted & roasted millet + pulse blend", d:"A wholesome instant java made from 10+ sprouted, roasted millets and pulses. Just mix with warm milk or water for a nourishing family drink."},
+      te:{n:"మల్టీ మిల్లెట్ జావ పొడి", tag:"మొలకెత్తించి వేయించిన చిరుధాన్యాలు & పప్పులు", d:"10+ మొలకెత్తించి వేయించిన చిరుధాన్యాలు, పప్పులతో చేసిన ఆరోగ్యకరమైన ఇన్‌స్టంట్ జావ. గోరువెచ్చని పాలు లేదా నీటిలో కలిపితే చాలు."},
+      badges:["No Preservatives","No Added Sugar","10+ Grains"], prices:[{s:"250g",m:199},{s:"500g",m:379}] },
+    { id:"ragi", cat:"java", img:"brand/front-ragi.png",
+      en:{n:"Ragi Java Powder", tag:"Sprouted & roasted, calcium-rich", d:"Calcium-rich sprouted ragi java for strong bones — light, easy to digest and great for all ages, from toddlers to elders."},
+      te:{n:"రాగి జావ పొడి", tag:"మొలకెత్తించి వేయించినది, క్యాల్షియం సమృద్ధి", d:"ఎముకల ఆరోగ్యానికి క్యాల్షియం ఎక్కువగా ఉండే రాగి జావ. తేలికగా, సులభంగా జీర్ణమవుతుంది — పిల్లల నుంచి పెద్దల వరకు అందరికీ మంచిది."},
+      badges:["Calcium Rich","No Preservatives","No Added Sugar"], prices:[{s:"250g",m:149},{s:"500g",m:289}] },
+    { id:"jowar", cat:"sprouted", img:"brand/front-jowar.png",
+      en:{n:"Sprouted Jowar Powder", tag:"100% single-ingredient sorghum", d:"100% sprouted jowar (sorghum). One powder, countless recipes — rotis, java, porridge, dosa and more."},
+      te:{n:"మొలకెత్తించిన జొన్న పొడి", tag:"100% స్వచ్ఛమైన జొన్న", d:"100% మొలకెత్తించిన జొన్న పొడి. రొట్టెలు, జావ, గంజి, దోసె — ఎన్నో వంటలకు ఒకటే పొడి."},
+      badges:["100% Jowar","No Preservatives"], prices:[] },
+    { id:"bajra", cat:"sprouted", img:"brand/front-bajra.png",
+      en:{n:"Sprouted Bajra Powder", tag:"100% single-ingredient pearl millet", d:"100% sprouted bajra (pearl millet) — warming, iron-rich and wonderfully versatile for everyday cooking."},
+      te:{n:"మొలకెత్తించిన సజ్జ పొడి", tag:"100% స్వచ్ఛమైన సజ్జ", d:"100% మొలకెత్తించిన సజ్జ పొడి — శరీరానికి వెచ్చదనం, ఐరన్ సమృద్ధి, రోజువారీ వంటలకు ఎంతో అనుకూలం."},
+      badges:["100% Bajra","No Preservatives"], prices:[] },
+    { id:"wheat", cat:"sprouted", img:"brand/front-wheat.png",
+      en:{n:"Sprouted Wheat Powder", tag:"100% single-ingredient wheat", d:"100% sprouted wheat — perfect for soft rotis, chapatis, parathas, puris and everyday cooking."},
+      te:{n:"మొలకెత్తించిన గోధుమ పొడి", tag:"100% స్వచ్ఛమైన గోధుమ", d:"100% మొలకెత్తించిన గోధుమ పొడి — మెత్తని రొట్టెలు, చపాతీలు, పరాఠాలు, పూరీలకు అనుకూలం."},
+      badges:["100% Wheat","No Preservatives"], prices:[] },
+    { id:"idli", cat:"mix", img:"brand/front-idli.png",
+      en:{n:"Multi Millet Idli Mix", tag:"Instant · sprouted millets", d:"Instant sprouted multi-millet idli mix. Just add water and salt for soft, fluffy idlis — a healthy breakfast made easy."},
+      te:{n:"మల్టీ మిల్లెట్ ఇడ్లీ మిక్స్", tag:"ఇన్‌స్టంట్ · మొలకెత్తించిన చిరుధాన్యాలు", d:"ఇన్‌స్టంట్ మల్టీ మిల్లెట్ ఇడ్లీ మిక్స్. నీరు, ఉప్పు కలిపితే మెత్తని ఇడ్లీలు — ఆరోగ్యకరమైన బ్రేక్‌ఫాస్ట్ చాలా సులభం."},
+      badges:["Instant","No Preservatives"], prices:[] },
+    { id:"dosa", cat:"mix", img:"brand/front-dosa.png",
+      en:{n:"Multi Millet Dosa Mix", tag:"Instant · sprouted millets", d:"Instant sprouted multi-millet dosa mix. Just add water and salt for crisp, golden dosas every single time."},
+      te:{n:"మల్టీ మిల్లెట్ దోసె మిక్స్", tag:"ఇన్‌స్టంట్ · మొలకెత్తించిన చిరుధాన్యాలు", d:"ఇన్‌స్టంట్ మల్టీ మిల్లెట్ దోసె మిక్స్. నీరు, ఉప్పు కలిపితే ప్రతిసారీ కరకరలాడే బంగారు దోసెలు."},
+      badges:["Instant","No Preservatives"], prices:[] },
+    { id:"cocoa", cat:"special", img:"brand/front-cocoa.png",
+      en:{n:"Roasted Cocoa Nut & Seed Powder", tag:"Nuts, seeds & cocoa", d:"Power-packed roasted nuts, seeds and cocoa. Perfect with milk, smoothies, oats and porridge for a nourishing treat."},
+      te:{n:"రోస్టెడ్ కోకో నట్ & సీడ్ పొడి", tag:"గింజలు, విత్తనాలు & కోకో", d:"వేయించిన డ్రై ఫ్రూట్స్, విత్తనాలు, కోకోతో నిండిన శక్తివంతమైన పొడి. పాలు, స్మూతీలు, ఓట్స్‌తో అద్భుతమైన రుచి."},
+      badges:["Dry Fruits & Nuts","No Added Sugar"], prices:[] },
+    { id:"dates", cat:"special", img:"brand/front-dates.png",
+      en:{n:"Dry Dates Powder", tag:"100% natural sweetener", d:"100% dry dates powder — a natural way to sweeten milk, porridge, desserts and bakes without refined sugar."},
+      te:{n:"ఖర్జూర పొడి", tag:"100% సహజ తీపి", d:"100% ఖర్జూర పొడి — పాలు, గంజి, స్వీట్లు, బేకింగ్‌కు చక్కెర లేకుండా సహజంగా తీపిని జోడించే మార్గం."},
+      badges:["100% Dates","Natural Sweetener"], prices:[] }
+  ];
+
+  var CATS = [
+    {id:"all", en:"All", te:"అన్నీ"},
+    {id:"java", en:"Java Powders", te:"జావ పొడులు"},
+    {id:"sprouted", en:"Sprouted Powders", te:"మొలకెత్తించిన పొడులు"},
+    {id:"mix", en:"Instant Mixes", te:"ఇన్‌స్టంట్ మిక్స్‌లు"},
+    {id:"special", en:"Specials", te:"ప్రత్యేకమైనవి"}
+  ];
+
+  var BENEFITS = [
+    {ic:"fibre", en:{t:"Rich in Fibre & Protein", d:"Millets are naturally high in dietary fibre and plant protein for lasting fullness."}, te:{t:"పీచు & ప్రోటీన్ పుష్కలంగా", d:"చిరుధాన్యాల్లో సహజంగా పీచు, మొక్కల ప్రోటీన్ ఎక్కువ — ఎక్కువసేపు కడుపు నిండుగా ఉంటుంది."}},
+    {ic:"bone", en:{t:"Calcium & Iron Rich", d:"Grains like ragi and bajra support strong bones and healthy energy levels."}, te:{t:"క్యాల్షియం & ఐరన్ సమృద్ధి", d:"రాగి, సజ్జ లాంటి ధాన్యాలు ఎముకల బలానికి, శక్తికి తోడ్పడతాయి."}},
+    {ic:"digest", en:{t:"Easy to Digest", d:"Sprouting makes nutrients gentler and easier for little tummies and elders alike."}, te:{t:"తేలికైన జీర్ణక్రియ", d:"మొలకెత్తించడం వల్ల పోషకాలు తేలికగా, పిల్లలకు, పెద్దలకు సులభంగా జీర్ణమవుతాయి."}},
+    {ic:"energy", en:{t:"Steady Energy", d:"Slow-release carbohydrates keep the whole family going through busy days."}, te:{t:"నిలకడైన శక్తి", d:"నెమ్మదిగా విడుదలయ్యే కార్బోహైడ్రేట్లు రోజంతా శక్తినిస్తాయి."}},
+    {ic:"family", en:{t:"Good for All Ages", d:"From toddlers (6m+) to grandparents — wholesome nutrition everyone can enjoy."}, te:{t:"అన్ని వయసుల వారికి", d:"చిన్నారుల (6నెలలు+) నుంచి పెద్దల వరకు — అందరికీ మంచి పోషణ."}},
+    {ic:"leaf", en:{t:"Traditional & Natural", d:"Time-tested grains, sprouted and roasted with no preservatives or added sugar."}, te:{t:"సాంప్రదాయ & సహజం", d:"కాలపరీక్షకు నిలిచిన ధాన్యాలు — ప్రిజర్వేటివ్‌లు, అదనపు చక్కెర లేకుండా."}}
+  ];
+
+  var STEPS = [
+    {en:{t:"Mix", d:"Blend 2–3 tbsp of powder into a little warm water or milk to a smooth paste."}, te:{t:"కలపండి", d:"2–3 టేబుల్ స్పూన్ పొడిని కొద్దిగా గోరువెచ్చని నీరు లేదా పాలలో మెత్తగా కలపండి."}},
+    {en:{t:"Stir", d:"Add more warm milk or water as needed and stir well until smooth."}, te:{t:"బాగా కలపండి", d:"అవసరమైతే మరింత గోరువెచ్చని పాలు లేదా నీరు కలిపి మెత్తగా అయ్యేవరకు కలపండి."}},
+    {en:{t:"Serve", d:"Serve warm. Sweeten with jaggery or dates powder if you like."}, te:{t:"అందించండి", d:"వెచ్చగా అందించండి. ఇష్టమైతే బెల్లం లేదా ఖర్జూర పొడితో తీపి చేర్చండి."}}
+  ];
+
+  var TESTI = [
+    {en:{q:"My kids finally look forward to their morning drink — and I love that there's no added sugar.", w:"Lakshmi P., Ongole"}, te:{q:"మా పిల్లలు ఇప్పుడు ఉదయపు డ్రింక్ కోసం ఎదురుచూస్తున్నారు — అదనపు చక్కెర లేకపోవడం నాకు చాలా నచ్చింది.", w:"లక్ష్మి పి., ఒంగోలు"}},
+    {en:{q:"The ragi java is so light and easy to digest. Perfect for my parents every morning.", w:"Ravi Teja, Hyderabad"}, te:{q:"రాగి జావ చాలా తేలికగా, సులభంగా జీర్ణమవుతుంది. మా అమ్మానాన్నలకు ప్రతిరోజూ ఉదయం అద్భుతం.", w:"రవి తేజ, హైదరాబాద్"}},
+    {en:{q:"Fresh, natural and truly wholesome. You can actually taste the difference.", w:"Sowmya R., Guntur"}, te:{q:"తాజా, సహజం, నిజంగా ఆరోగ్యకరం. రుచిలోనే తేడా తెలుస్తుంది.", w:"సౌమ్య ఆర్., గుంటూరు"}}
+  ];
+
+  var ICONS = {
+    fibre:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-3 3-3 8 0 11 3-3 3-8 0-11z"/><path d="M12 14v7M8 18l4-2 4 2"/></svg>',
+    bone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 7a2.2 2.2 0 10-2 3l4 4a2.2 2.2 0 103 3l-4-4a2.2 2.2 0 10-2-3z" transform="rotate(0 12 12)"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 8l8 8"/></svg>',
+    digest:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a6 6 0 016 6c0 4-3 5-3 8a3 3 0 01-6 0c0-3-3-4-3-8a6 6 0 016-6z"/></svg>',
+    energy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>',
+    family:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2 21c0-3.3 2.7-6 6-6s6 2.7 6 6M15 21c0-2.6 1.4-4.6 4-5"/></svg>',
+    leaf:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20C4 11 11 4 20 4c0 9-7 16-16 16z"/><path d="M4 20c4-6 8-9 13-11"/></svg>'
+  };
+
+  var I18N = {
+    en:{ skip:"Skip to products", nav_story:"Our Story", nav_products:"Products", nav_why:"Why Millets", nav_prepare:"How to Use", nav_contact:"Contact",
+      hero_ey:"Sprouted & Roasted · Family Nutrition", hero_h1a:"Pure Ingredients.", hero_h1b:"Wholesome Nutrition.",
+      hero_sub:"Traditional millets, sprouted and roasted the natural way — wholesome instant java powders and mixes for the whole family. No preservatives. No added sugar.",
+      hero_cta1:"Order on WhatsApp", hero_cta2:"Explore the Range", hero_badge:"Millets<br>& Grains",
+      chip1:"100% Natural", chip2:"No Preservatives", chip3:"No Added Sugar",
+      m1:"Sprouted & Roasted", m2:"No Preservatives", m3:"No Added Sugar", m4:"100% Natural Ingredients", m5:"For the Whole Family", m6:"FSSAI Registered",
+      story_ey:"Our Story", story_h:"Bringing millets back to the family table",
+      story_p1:"Sindhu Millets & More began with a simple belief — the traditional grains our grandparents thrived on deserve a place in every modern home. We sprout and roast each grain the slow, natural way to unlock better taste and easy nutrition.",
+      story_p2:"No preservatives, no added sugar — just honest, wholesome food. From everyday java powders to instant idli & dosa mixes, every product is made for the whole family.",
+      story_q:"\u201CReal food, made the way it used to be — for the people we love most.\u201D",
+      stat1:"Millets & Grains", stat2:"Wholesome Products", stat3:"Preservatives", stat4:"Natural",
+      prod_ey:"Our Products", prod_h:"Wholesome foods for every day", prod_p:"Sprouted & roasted powders, instant mixes and natural specials — tap any product to order on WhatsApp.",
+      why_ey:"Why Millets", why_h:"Tiny grains, mighty goodness", why_p:"For generations, millets have quietly powered healthy families. Here's what makes them special.",
+      prep_ey:"How to Use", prep_h:"A warm, wholesome cup in minutes", prep_p:"Our java powders are ready in three simple steps.",
+      tm_ey:"Family Love", tm_h:"Loved in homes like yours",
+      ct_ey:"Get in Touch", ct_h:"Orders & enquiries", ct_p:"We take orders on WhatsApp. Reach us any way you like — we'd love to hear from you.",
+      ct_wa:"WhatsApp", ct_call:"Call", ct_email:"Email", ct_addr:"Address · Tap for directions",
+      form_h:"Send an enquiry", form_s:"Fill this in and we'll open WhatsApp with your message ready to send.",
+      form_name:"Your name", form_prod:"Product", form_msg:"Message", form_btn:"Send on WhatsApp",
+      m_qty:"Quantity", m_order:"Order on WhatsApp",
+      foot_p:"Pure Ingredients. Wholesome Nutrition. Sprouted & roasted millet foods, made for the whole family.",
+      foot_ql:"Explore", foot_prod:"Products", foot_ct:"Contact", foot_rights:"All rights reserved.", foot_tag:"Pure Ingredients. Wholesome Nutrition.",
+      price_from:"from", enquire:"Price on enquiry", order:"Order", qv:"Quick view",
+      wa_order:"Hi Sindhu Millets & More! I'd like to order:", wa_qty:"Qty", wa_size:"Size", wa_generic:"Hi Sindhu Millets & More! I'd like to know more about your products.", wa_thanks:"Please share the details. Thank you!" },
+    te:{ skip:"ఉత్పత్తులకు వెళ్లండి", nav_story:"మా కథ", nav_products:"ఉత్పత్తులు", nav_why:"చిరుధాన్యాలు ఎందుకు", nav_prepare:"ఎలా వాడాలి", nav_contact:"సంప్రదించండి",
+      hero_ey:"మొలకెత్తించి వేయించినవి · కుటుంబ పోషణ", hero_h1a:"స్వచ్ఛమైన పదార్థాలు.", hero_h1b:"సంపూర్ణ పోషణ.",
+      hero_sub:"సాంప్రదాయ చిరుధాన్యాలు, సహజంగా మొలకెత్తించి వేయించినవి — కుటుంబం అంతటికీ మంచి ఇన్‌స్టంట్ జావ పొడులు, మిక్స్‌లు. ప్రిజర్వేటివ్‌లు లేవు. అదనపు చక్కెర లేదు.",
+      hero_cta1:"వాట్సాప్‌లో ఆర్డర్ చేయండి", hero_cta2:"ఉత్పత్తులు చూడండి", hero_badge:"చిరుధాన్యాలు<br>& ధాన్యాలు",
+      chip1:"100% సహజం", chip2:"ప్రిజర్వేటివ్‌లు లేవు", chip3:"అదనపు చక్కెర లేదు",
+      m1:"మొలకెత్తించి వేయించినవి", m2:"ప్రిజర్వేటివ్‌లు లేవు", m3:"అదనపు చక్కెర లేదు", m4:"100% సహజ పదార్థాలు", m5:"కుటుంబం అంతటికీ", m6:"FSSAI రిజిస్టర్డ్",
+      story_ey:"మా కథ", story_h:"చిరుధాన్యాలను మళ్లీ కుటుంబ భోజనంలోకి",
+      story_p1:"సింధు మిల్లెట్స్ & మోర్ ఒక సాధారణ నమ్మకంతో మొదలైంది — మన తాతముత్తాతలు ఆరోగ్యంగా జీవించిన సాంప్రదాయ ధాన్యాలకు ప్రతి ఇంట్లో స్థానం ఉండాలి. మేము ప్రతి ధాన్యాన్ని నెమ్మదిగా, సహజంగా మొలకెత్తించి వేయిస్తాం — మంచి రుచి, తేలికైన పోషణ కోసం.",
+      story_p2:"ప్రిజర్వేటివ్‌లు లేవు, అదనపు చక్కెర లేదు — కేవలం స్వచ్ఛమైన, ఆరోగ్యకరమైన ఆహారం. రోజువారీ జావ పొడుల నుంచి ఇన్‌స్టంట్ ఇడ్లీ & దోసె మిక్స్‌ల వరకు, ప్రతి ఉత్పత్తి కుటుంబం అంతటికీ.",
+      story_q:"\u201Cనిజమైన ఆహారం, పాత పద్ధతిలో — మనం ఎక్కువగా ప్రేమించే వారి కోసం.\u201D",
+      stat1:"చిరుధాన్యాలు & ధాన్యాలు", stat2:"ఆరోగ్యకర ఉత్పత్తులు", stat3:"ప్రిజర్వేటివ్‌లు", stat4:"సహజం",
+      prod_ey:"మా ఉత్పత్తులు", prod_h:"ప్రతిరోజుకీ ఆరోగ్యకరమైన ఆహారం", prod_p:"మొలకెత్తించి వేయించిన పొడులు, ఇన్‌స్టంట్ మిక్స్‌లు, ప్రత్యేకమైనవి — ఏదైనా ఉత్పత్తిని నొక్కి వాట్సాప్‌లో ఆర్డర్ చేయండి.",
+      why_ey:"చిరుధాన్యాలు ఎందుకు", why_h:"చిన్న గింజలు, పెద్ద మేలు", why_p:"తరతరాలుగా చిరుధాన్యాలు ఆరోగ్యకరమైన కుటుంబాలకు శక్తినిచ్చాయి. వాటి ప్రత్యేకత ఇదే.",
+      prep_ey:"ఎలా వాడాలి", prep_h:"నిమిషాల్లో వెచ్చని, ఆరోగ్యకరమైన కప్పు", prep_p:"మా జావ పొడులు మూడు సులభమైన దశల్లో సిద్ధం.",
+      tm_ey:"కుటుంబాల ప్రేమ", tm_h:"మీలాంటి ఇళ్లలో ఇష్టపడేవి",
+      ct_ey:"సంప్రదించండి", ct_h:"ఆర్డర్లు & విచారణలు", ct_p:"మేము వాట్సాప్‌లో ఆర్డర్లు తీసుకుంటాం. మీకు నచ్చిన విధంగా మమ్మల్ని సంప్రదించండి.",
+      ct_wa:"వాట్సాప్", ct_call:"కాల్", ct_email:"ఇమెయిల్", ct_addr:"చిరునామా · దారి కోసం నొక్కండి",
+      form_h:"విచారణ పంపండి", form_s:"ఇది నింపండి — మీ సందేశంతో వాట్సాప్ తెరుస్తాం, పంపడానికి సిద్ధంగా.",
+      form_name:"మీ పేరు", form_prod:"ఉత్పత్తి", form_msg:"సందేశం", form_btn:"వాట్సాప్‌లో పంపండి",
+      m_qty:"పరిమాణం", m_order:"వాట్సాప్‌లో ఆర్డర్ చేయండి",
+      foot_p:"స్వచ్ఛమైన పదార్థాలు. సంపూర్ణ పోషణ. మొలకెత్తించి వేయించిన చిరుధాన్య ఆహారం — కుటుంబం అంతటికీ.",
+      foot_ql:"చూడండి", foot_prod:"ఉత్పత్తులు", foot_ct:"సంప్రదించండి", foot_rights:"అన్ని హక్కులు మావే.", foot_tag:"స్వచ్ఛమైన పదార్థాలు. సంపూర్ణ పోషణ.",
+      price_from:"నుంచి", enquire:"ధర కోసం సంప్రదించండి", order:"ఆర్డర్", qv:"చూడండి",
+      wa_order:"హాయ్ సింధు మిల్లెట్స్ & మోర్! నేను ఆర్డర్ చేయాలనుకుంటున్నాను:", wa_qty:"పరిమాణం", wa_size:"సైజు", wa_generic:"హాయ్ సింధు మిల్లెట్స్ & మోర్! మీ ఉత్పత్తుల గురించి మరింత తెలుసుకోవాలనుకుంటున్నాను.", wa_thanks:"దయచేసి వివరాలు పంపండి. ధన్యవాదాలు!" }
+  };
+
+  var lang = localStorage.getItem(LS) || "en";
+  var $ = function(s,r){ return (r||document).querySelector(s); };
+  var $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  function t(k){ return (I18N[lang] && I18N[lang][k] != null) ? I18N[lang][k] : (I18N.en[k]||""); }
+  function waLink(msg){ return "https://wa.me/"+WA+"?text="+encodeURIComponent(msg); }
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); }
+
+  // ---- marquee
+  (function(){ var items=["m1","m2","m3","m4","m5","m6"]; var dot='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>';
+    var html=""; for(var r=0;r<2;r++){ items.forEach(function(k){ html+='<span class="it" data-i18n="'+k+'">'+esc(I18N.en[k])+'</span><span class="it" style="color:var(--gold)">'+dot+'</span>'; }); }
+    $("#mtrack").innerHTML=html; })();
+
+  // ---- filters + grid
+  var curFilter="all";
+  function renderFilters(){ $("#filters").innerHTML = CATS.map(function(c){ return '<button data-cat="'+c.id+'"'+(c.id===curFilter?' class="on"':'')+'>'+esc(c[lang])+'</button>'; }).join(""); }
+  function priceHTML(p){ if(!p.prices||!p.prices.length){ return '<span class="enq">'+esc(t("enquire"))+'</span>'; }
+    var m=p.prices[0].m; return '<span class="price">₹'+m+' <small>'+esc(t("price_from"))+' · '+p.prices[0].s+'</small></span>'; }
+  function renderGrid(){
+    var list = PRODUCTS.filter(function(p){ return curFilter==="all"||p.cat===curFilter; });
+    $("#grid").innerHTML = list.map(function(p){ var L=p[lang]; var cat=CATS.filter(function(c){return c.id===p.cat;})[0];
+      return '<article class="card reveal" data-id="'+p.id+'">'+
+        '<div class="pic" data-open="'+p.id+'"><span class="tagpill">'+esc(cat[lang])+'</span>'+
+        '<button class="qv" data-open="'+p.id+'" aria-label="'+esc(t("qv"))+'"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></button>'+
+        '<img src="'+p.img+'" alt="'+esc(L.n)+'" loading="lazy" /></div>'+
+        '<div class="body"><h3>'+esc(L.n)+'</h3>'+(lang==="en"?'<div class="te-name">'+esc(p.te.n)+'</div>':'')+
+        '<p>'+esc(L.tag)+'</p>'+
+        '<div class="foot">'+priceHTML(p)+
+        '<button class="order" data-order="'+p.id+'"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-6a11.4 11.4 0 111 .6l-5.9 1.5z"/></svg>'+esc(t("order"))+'</button></div></div></article>'; }).join("");
+    observeReveals();
+  }
+
+  // ---- benefits / steps / testimonials / footer products
+  function renderBenefits(){ $("#bgrid").innerHTML = BENEFITS.map(function(b,i){ var L=b[lang];
+    return '<div class="bcard reveal d'+((i%3))+'"><div class="bicon">'+ICONS[b.ic]+'</div><h3>'+esc(L.t)+'</h3><p>'+esc(L.d)+'</p></div>'; }).join(""); observeReveals(); }
+  function renderSteps(){ $("#steps").innerHTML = STEPS.map(function(s,i){ var L=s[lang];
+    return '<div class="step reveal d'+i+'"><div class="num">'+(i+1)+'</div><h3>'+esc(L.t)+'</h3><p>'+esc(L.d)+'</p></div>'; }).join(""); observeReveals(); }
+  var tmi=0;
+  function renderTesti(){ $("#tmtrack").innerHTML = TESTI.map(function(x){ var L=x[lang];
+    return '<div class="tm"><div class="stars">★★★★★</div><blockquote>'+esc(L.q)+'</blockquote><div class="who">'+esc(L.w)+'</div></div>'; }).join("");
+    $("#tmdots").innerHTML = TESTI.map(function(_,i){ return '<button data-tm="'+i+'"'+(i===tmi?' class="on"':'')+'></button>'; }).join(""); goTm(tmi); }
+  function goTm(i){ tmi=(i+TESTI.length)%TESTI.length; var tr=$("#tmtrack"); if(tr.children[tmi]) tr.style.transform=""; $$(".tm").forEach(function(el,idx){ el.style.transform="translateX("+(-100*tmi)+"%)"; }); $$("#tmdots button").forEach(function(b,idx){ b.classList.toggle("on",idx===tmi); }); }
+  function renderFprod(){ $("#fprod").innerHTML = PRODUCTS.slice(0,6).map(function(p){ return '<li><a href="#products" data-open="'+p.id+'">'+esc(p[lang].n)+'</a></li>'; }).join(""); }
+  function renderFormProds(){ var sel=$("#fProd"); sel.innerHTML='<option value="">— '+esc(lang==="en"?"Select a product":"ఉత్పత్తిని ఎంచుకోండి")+' —</option>'+PRODUCTS.map(function(p){ return '<option value="'+p.id+'">'+esc(p[lang].n)+'</option>'; }).join(""); }
+
+  // ---- i18n apply
+  function applyI18n(){
+    document.documentElement.lang = lang;
+    $$("[data-i18n]").forEach(function(el){ var k=el.getAttribute("data-i18n"); if(I18N[lang][k]!=null) el.innerHTML=I18N[lang][k]; });
+    $$(".lang button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-lang")===lang); });
+    var gen=waLink(t("wa_generic")); $("#heroWa").href=gen; $("#fab").href=gen; $("#ccWa").href=gen;
+  }
+  function setLang(l){ lang=l; localStorage.setItem(LS,l); applyI18n(); renderFilters(); renderGrid(); renderBenefits(); renderSteps(); renderTesti(); renderFprod(); renderFormProds(); if(modalId) openModal(modalId,true); }
+
+  // ---- WhatsApp order message
+  function orderMsg(p,size,qty){ var L=p[lang]; var line=t("wa_order")+" "+L.n;
+    if(size) line+=" ("+t("wa_size")+": "+size+")"; if(qty&&qty>1) line+=" × "+qty; line+=". "+t("wa_thanks"); return line; }
+
+  // ---- modal
+  var modalId=null, mSize=null, mQty=1;
+  function openModal(id,keep){ var p=PRODUCTS.filter(function(x){return x.id===id;})[0]; if(!p) return; modalId=id; var L=p[lang]; var cat=CATS.filter(function(c){return c.id===p.cat;})[0];
+    $("#mImg").src=p.img; $("#mImg").alt=L.n; $("#mCat").textContent=cat[lang]; $("#mName").textContent=L.n; $("#mTe").textContent=(lang==="en"?p.te.n:""); $("#mDesc").textContent=L.d;
+    $("#mChips").innerHTML=p.badges.map(function(b){ return '<span>'+esc(b)+'</span>'; }).join("");
+    var sz=$("#mSize"); if(p.prices&&p.prices.length){ sz.style.display=""; if(!keep||!mSize) mSize=p.prices[0].s;
+      sz.innerHTML=p.prices.map(function(pr){ return '<button data-size="'+pr.s+'"'+(pr.s===mSize?' class="on"':'')+'>'+pr.s+'<small>₹'+pr.m+'</small></button>'; }).join(""); }
+    else { sz.style.display="none"; mSize=null; }
+    if(!keep){ mQty=1; } $("#qVal").textContent=mQty;
+    updateOrder(p);
+    if(!keep){ $("#modal").classList.add("open"); document.body.style.overflow="hidden"; $(".mclose").focus(); }
+  }
+  function updateOrder(p){ p=p||PRODUCTS.filter(function(x){return x.id===modalId;})[0]; $("#mOrder").href=waLink(orderMsg(p,mSize,mQty)); }
+  function closeModal(){ $("#modal").classList.remove("open"); document.body.style.overflow=""; modalId=null; }
+
+  // ---- reveal observer
+  var io;
+  function observeReveals(){ if(!("IntersectionObserver" in window)){ $$(".reveal").forEach(function(e){e.classList.add("in");}); return; }
+    if(!io) io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }); },{threshold:.12,rootMargin:"0px 0px -8% 0px"});
+    $$(".reveal:not(.in)").forEach(function(e){ io.observe(e); }); }
+
+  // ---- counters
+  function runCounters(){ $$("#stats .n").forEach(function(el){ var to=+el.getAttribute("data-count"), sfx=el.getAttribute("data-suffix")||"", st=null, dur=1400;
+    function step(ts){ if(!st)st=ts; var pr=Math.min((ts-st)/dur,1); var v=Math.round((1-Math.pow(1-pr,3))*to); el.textContent=v+sfx; if(pr<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step); }); }
+
+  // ---- init
+  document.addEventListener("DOMContentLoaded", function(){
+    $("#yr").textContent=new Date().getFullYear();
+    renderFilters(); renderGrid(); renderBenefits(); renderSteps(); renderTesti(); renderFprod(); renderFormProds(); applyI18n(); observeReveals();
+
+    $("#filters").addEventListener("click", function(e){ var b=e.target.closest("[data-cat]"); if(!b)return; curFilter=b.getAttribute("data-cat"); renderFilters(); renderGrid(); });
+    document.addEventListener("click", function(e){
+      var o=e.target.closest("[data-open]"); if(o){ e.preventDefault(); openModal(o.getAttribute("data-open")); var ps=document.getElementById("products"); if(o.closest("#fprod")&&ps){} return; }
+      var od=e.target.closest("[data-order]"); if(od){ e.preventDefault(); var p=PRODUCTS.filter(function(x){return x.id===od.getAttribute("data-order");})[0]; window.open(waLink(orderMsg(p,(p.prices[0]||{}).s,1)),"_blank"); return; }
+      if(e.target.closest("[data-close]")){ closeModal(); return; }
+    });
+    $("#mSize").addEventListener("click", function(e){ var b=e.target.closest("[data-size]"); if(!b)return; mSize=b.getAttribute("data-size"); $$("#mSize button").forEach(function(x){x.classList.toggle("on",x===b);}); updateOrder(); });
+    $("#qMinus").addEventListener("click", function(){ mQty=Math.max(1,mQty-1); $("#qVal").textContent=mQty; updateOrder(); });
+    $("#qPlus").addEventListener("click", function(){ mQty=Math.min(99,mQty+1); $("#qVal").textContent=mQty; updateOrder(); });
+    document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeModal(); });
+
+    $$(".lang button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); }); });
+
+    $("#tmdots").addEventListener("click", function(e){ var b=e.target.closest("[data-tm]"); if(b) goTm(+b.getAttribute("data-tm")); });
+    var tmTimer=setInterval(function(){ if(!document.hidden) goTm(tmi+1); }, 6000);
+
+    $("#enqForm").addEventListener("submit", function(e){ e.preventDefault(); var name=$("#fName").value.trim(); var pid=$("#fProd").value; var msg=$("#fMsg").value.trim();
+      var p=PRODUCTS.filter(function(x){return x.id===pid;})[0];
+      var text=(lang==="en"?"Hi Sindhu Millets & More! ":"హాయ్ సింధు మిల్లెట్స్ & మోర్! ")+(name?("\n"+(lang==="en"?"Name":"పేరు")+": "+name):"")+(p?("\n"+(lang==="en"?"Product":"ఉత్పత్తి")+": "+p[lang].n):"")+(msg?("\n"+msg):("\n"+t("wa_generic")));
+      window.open(waLink(text),"_blank"); });
+
+    // header scroll + toTop + counters
+    var nav=$("#nav"), toTop=$("#toTop"), statsDone=false;
+    function onScroll(){ nav.classList.toggle("scrolled", window.scrollY>20); toTop.classList.toggle("show", window.scrollY>500);
+      if(!statsDone){ var s=$("#stats").getBoundingClientRect(); if(s.top<window.innerHeight*.85){ statsDone=true; runCounters(); } } }
+    window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+    toTop.addEventListener("click", function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+
+    // mobile menu
+    var burger=$("#burger");
+    burger.addEventListener("click", function(){ var open=document.body.classList.toggle("menu-open"); burger.setAttribute("aria-expanded",open); });
+    $("#navlinks").addEventListener("click", function(e){ if(e.target.tagName==="A"){ document.body.classList.remove("menu-open"); burger.setAttribute("aria-expanded",false); } });
+  });
+})();
+</script>
+</body>
+</html>
