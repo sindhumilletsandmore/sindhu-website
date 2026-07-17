@@ -729,9 +729,17 @@
 
   // ---- reveal observer
   var io;
+  // Safety net: reveal anything that has already reached the trigger line. Covers content that is
+  // re-rendered while scrolled (filter/language change) and fast scrolls (nav links, flick, End key)
+  // that the IntersectionObserver can "skip over", which would otherwise leave sections invisible.
+  // Any element whose top has entered the viewport is revealed now, so nothing on screen is ever
+  // blank — even when landing on an anchor with an element parked at the bottom edge.
+  function revealInView(){ var vh=window.innerHeight||document.documentElement.clientHeight;
+    $$(".reveal:not(.in)").forEach(function(e){ if(e.getBoundingClientRect().top < vh){ e.classList.add("in"); if(io) io.unobserve(e); } }); }
   function observeReveals(){ if(!("IntersectionObserver" in window)){ $$(".reveal").forEach(function(e){e.classList.add("in");}); return; }
     if(!io) io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }); },{threshold:.12,rootMargin:"0px 0px -8% 0px"});
-    $$(".reveal:not(.in)").forEach(function(e){ io.observe(e); }); }
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    $$(".reveal:not(.in)").forEach(function(e){ if(e.getBoundingClientRect().top < vh){ e.classList.add("in"); } else { io.observe(e); } }); }
 
   // ---- counters
   function runCounters(){ $$("#stats .n").forEach(function(el){ var to=+el.getAttribute("data-count"), sfx=el.getAttribute("data-suffix")||"", st=null, dur=1400;
@@ -766,7 +774,7 @@
 
     // header scroll + toTop + counters
     var nav=$("#nav"), toTop=$("#toTop"), statsDone=false;
-    function onScroll(){ nav.classList.toggle("scrolled", window.scrollY>20); toTop.classList.toggle("show", window.scrollY>500);
+    function onScroll(){ nav.classList.toggle("scrolled", window.scrollY>20); toTop.classList.toggle("show", window.scrollY>500); revealInView();
       if(!statsDone){ var s=$("#stats").getBoundingClientRect(); if(s.top<window.innerHeight*.85){ statsDone=true; runCounters(); } } }
     window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
     toTop.addEventListener("click", function(){ window.scrollTo({top:0,behavior:"smooth"}); });
